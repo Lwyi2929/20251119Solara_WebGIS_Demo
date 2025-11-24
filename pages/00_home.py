@@ -1,5 +1,5 @@
 import solara
-import pandas as pd
+
 
 
 @solara.component
