@@ -14,7 +14,7 @@ def create_map():
     )
 
     # ★ 確保 geojson URL 正確，並加入 layer control
-    url = "https://raw.githubusercontent.com/lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river.geojson"
+    url = "https://raw.githubusercontent.com/lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river_wgs84.geojson"
     m.add_geojson(url, name="馬太鞍溪", layer_control=True)
 
     return m
