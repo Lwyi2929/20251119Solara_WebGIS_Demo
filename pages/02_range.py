@@ -12,7 +12,7 @@ def create_map():
         sidebar_visible=True,
     )
     m.add_basemap("OpenStreetMap")
-    m.add_geojson("https://raw.githubusercontent.com/lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river_wgs84.geojson", name="station")
+   # m.add_geojson("https://raw.githubusercontent.com/lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river_wgs84.geojson", name="station")
     m.add_geojson("https://raw.githubusercontent.com/leoluyi/taipei_mrt/345dd492fa9c0138c126b3de75483a2881ed8991/routes.geojson", name="routes")
 
     return m
