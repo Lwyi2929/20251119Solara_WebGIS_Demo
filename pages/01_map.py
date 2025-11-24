@@ -12,10 +12,9 @@ def create_map():
         basemap="OpenStreetMap" # 先設一個保證會成功的預設值
     )
 
-    with open("data/ma_river.geojson") as f:
-        gj = json.load(f)
-    m.add_geojson(gj, name="river")
-
+    m.add_geojson("https://raw.githubusercontent.com/lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river.geojson", name="river")
+      
+    return m
 
 @solara.component
 def Page():
