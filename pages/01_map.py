@@ -1,5 +1,7 @@
 import solara
 import leafmap.leafmap as leafmap
+import json
+from pathlib import Path
 
 
 def create_map():
@@ -13,9 +15,16 @@ def create_map():
         basemap="OpenStreetMap"
     )
 
-    # ★ 確保 geojson URL 正確，並加入 layer control
-    url = "https://raw.githubusercontent.com/lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river_wgs84.geojson"
-    m.add_geojson(url, name="馬太鞍溪", layer_control=True)
+    # 優先以本機檔案載入（容器內可直接使用），避免 HTTP 404
+    geojson_path = Path(__file__).resolve().parents[1] / "data" / "ma_river.geojson"
+    if geojson_path.exists():
+        with open(geojson_path, "r", encoding="utf-8") as f:
+            gj = json.load(f)
+        m.add_geojson(gj, name="馬太鞍溪", layer_control=True)
+    else:
+        # fallback: 使用遠端 raw URL（請確認 URL 可存取）
+        url = "https://raw.githubusercontent.com/lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river_wgs84.geojson"
+        m.add_geojson(url, name="馬太鞍溪", layer_control=True)
 
     return m
 
