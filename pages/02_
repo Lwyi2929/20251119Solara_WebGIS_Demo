@@ -1,0 +1,23 @@
+import solara
+import leafmap.maplibregl as leafmap
+
+def create_map():
+    m = leafmap.Map(
+        center=[121.5319, 25.0478],
+        zoom=16,
+        pitch=60,
+        bearing=-17,
+        style="positron",
+        height="750px",
+        sidebar_visible=True,
+    )
+    m.add_basemap("OpenStreetMap")
+    m.add_geojson("https://raw.githubusercontent.com/lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river.geojson", name="station")
+    m.add_geojson("https://raw.githubusercontent.com/leoluyi/taipei_mrt/345dd492fa9c0138c126b3de75483a2881ed8991/routes.geojson", name="routes")
+
+    return m
+
+@solara.component
+def Page():
+    m = create_map()
+    return m.to_solara()
