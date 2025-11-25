@@ -10,6 +10,7 @@ def create_map():
         layout_height="600px",
         basemap="OpenStreetMap" # 先設一個保證會成功的預設值
     )
+    m.add_geojson("https://raw.githubusercontent.com/Lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river_wgs84.geojson", name="river")
     return m
 
 @solara.component

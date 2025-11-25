@@ -11,7 +11,7 @@ def create_map():
         height="750px",
         sidebar_visible=True,
     )
-    m.add_basemap("OpenTopoMap")
+    m.add_basemap("OpenStreetMap")
     m.add_geojson("https://raw.githubusercontent.com/Lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river_wgs84.geojson", name="river")
     
 
