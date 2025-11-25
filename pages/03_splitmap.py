@@ -5,7 +5,7 @@ def create_split_map():
     # 直接使用 split_map，傳入底圖名稱字串
     split_control = leafmap.split_map(
         left_layer="Esri.WorldImagery",  # 左邊：衛星圖 只能底圖圖層  不能是物件
-        right_layer="Esri.WorldHillshade",     # 右邊：街道圖 只能底圖圖層  不能是物件
+        right_layer="OpenTopoMap",     # 右邊：街道圖 只能底圖圖層  不能是物件
         left_label="衛星影像",
         right_label="街道地圖",
         center=[23.6995, 121.295], 
