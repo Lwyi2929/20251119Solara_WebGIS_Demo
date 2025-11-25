@@ -3,7 +3,7 @@ import leafmap.maplibregl as leafmap
 
 def create_map():
     m = leafmap.Map(
-        center=[121.5319, 25.0478],
+        center=[121.2955, 23.6995],
         zoom=16,
         pitch=60,
         bearing=-17,
@@ -11,7 +11,7 @@ def create_map():
         height="750px",
         sidebar_visible=True,
     )
-    m.add_basemap("OpenStreetMap")
+    m.add_basemap("OpenTopoMap")
     m.add_geojson("https://raw.githubusercontent.com/Lwyi2929/20251119Solara_WebGIS_Demo/main/ma_river_wgs84.geojson", name="river")
     
 
